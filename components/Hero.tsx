@@ -29,10 +29,10 @@ export default function Hero() {
             </div>
 
             <div>
-              <p className="text-gray-400 text-lg mb-2" style={{ fontFamily: 'Syne, sans-serif' }}>
+              <p className="text-gray-400 text-lg mb-2" style={{ fontFamily: 'var(--font-syne)' }}>
                 Full‑Stack & Mobile Developer
               </p>
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.05]" style={{ fontFamily: 'Syne, sans-serif' }}>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.05]" style={{ fontFamily: 'var(--font-syne)' }}>
                 Asingura
                 <br />
                 <span className="gradient-text">Rose Desire</span>

@@ -94,7 +94,7 @@ export default function Skills() {
               key={title}
               className={`rounded-2xl p-6 bg-gradient-to-br ${color} border ${border} hover:scale-[1.01] transition-transform`}
             >
-              <h3 className={`text-lg font-bold mb-5 ${accent}`} style={{ fontFamily: 'Syne, sans-serif' }}>
+              <h3 className={`text-lg font-bold mb-5 ${accent}`} style={{ fontFamily: 'var(--font-syne)' }}>
                 {title}
               </h3>
               <div className="grid grid-cols-4 gap-3">

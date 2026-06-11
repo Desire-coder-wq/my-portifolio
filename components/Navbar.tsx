@@ -41,7 +41,7 @@ export default function Navbar() {
             href="#home"
             onClick={(e) => handleClick(e, '#home')}
             className="text-xl font-bold"
-            style={{ fontFamily: 'Syne, sans-serif' }}
+            style={{ fontFamily: 'var(--font-syne)' }}
           >
             <span className="gradient-text">RD</span>
             <span className="text-white/70 font-light ml-1 text-base">Asingura</span>

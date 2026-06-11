@@ -229,7 +229,7 @@ export default function Projects() {
               {/* Content */}
               <div className="p-6 flex flex-col flex-1">
                 <div className="flex items-start justify-between gap-2 mb-2">
-                  <h3 className="text-white font-bold text-lg leading-tight" style={{ fontFamily: 'Syne, sans-serif' }}>
+                  <h3 className="text-white font-bold text-lg leading-tight" style={{ fontFamily: 'var(--font-syne)' }}>
                     {project.title}
                   </h3>
                   {project.badge && (

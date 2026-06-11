@@ -29,7 +29,7 @@ export default function Contact() {
           {/* Info */}
           <div className="space-y-6">
             <div className="card-dark p-6 rounded-2xl">
-              <h3 className="text-white font-bold text-xl mb-6" style={{ fontFamily: 'Syne, sans-serif' }}>
+              <h3 className="text-white font-bold text-xl mb-6" style={{ fontFamily: 'var(--font-syne)' }}>
                 Contact Info
               </h3>
               <div className="space-y-4">
@@ -53,7 +53,7 @@ export default function Contact() {
             </div>
 
             <div className="card-dark p-6 rounded-2xl">
-              <h3 className="text-white font-bold text-base mb-4" style={{ fontFamily: 'Syne, sans-serif' }}>
+              <h3 className="text-white font-bold text-base mb-4" style={{ fontFamily: 'var(--font-syne)' }}>
                 Find me online
               </h3>
               <div className="flex gap-3">
@@ -79,7 +79,7 @@ export default function Contact() {
 
           {/* Form */}
           <div className="card-dark p-6 rounded-2xl">
-            <h3 className="text-white font-bold text-xl mb-6" style={{ fontFamily: 'Syne, sans-serif' }}>
+            <h3 className="text-white font-bold text-xl mb-6" style={{ fontFamily: 'var(--font-syne)' }}>
               Send a Message
             </h3>
             <form onSubmit={handleSubmit} className="space-y-4">

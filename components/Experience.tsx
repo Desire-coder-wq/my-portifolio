@@ -67,7 +67,7 @@ export default function Experience() {
                 >
                   <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
                     <div>
-                      <h3 className="text-white font-bold text-lg" style={{ fontFamily: 'Syne, sans-serif' }}>
+                      <h3 className="text-white font-bold text-lg" style={{ fontFamily: 'var(--font-syne)' }}>
                         {exp.role}
                       </h3>
                       <p className="text-gray-400 text-sm mt-0.5">{exp.company}</p>
