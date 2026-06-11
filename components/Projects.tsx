@@ -116,7 +116,7 @@ function MediaSlot({ project }: { project: Project }) {
   const [playing, setPlaying] = useState(false)
   const hasSrc = !!project.mediaSrc
 
-  // Gradient fallback colors per project
+  
   const gradients: Record<string, string> = {
     CartWise: 'from-violet-600 to-purple-800',
     AgriTech: 'from-emerald-600 to-teal-800',
