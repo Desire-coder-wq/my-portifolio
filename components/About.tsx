@@ -23,14 +23,14 @@ export default function About() {
           {/* Left */}
           <div className="space-y-6">
             <p className="text-gray-300 leading-relaxed text-lg">
-              I'm a full‑stack & mobile developer with expertise in{' '}
+              I&apos;m a full‑stack & mobile developer with expertise in{' '}
               <span className="text-violet-400 font-semibold">
                 JavaScript/TypeScript, React Native, Next.js, NestJS, and PostgreSQL
               </span>.
               I design high‑performance digital ecosystems — from corporate wellness platforms to rental automation systems.
             </p>
             <p className="text-gray-400 leading-relaxed">
-              Passionate about crafting maintainable code, real‑time features, and seamless UX across all devices. I've shipped production apps used by real people — including a wellness platform, property management tool, and a school alert system built with Kotlin for Android.
+              Passionate about crafting maintainable code, real‑time features, and seamless UX across all devices. I&apos;ve shipped production apps used by real people — including a wellness platform, property management tool, and a school alert system built with Kotlin for Android.
             </p>
 
             <div className="grid grid-cols-3 gap-4 pt-4">
@@ -51,8 +51,8 @@ export default function About() {
             className="relative rounded-2xl p-8 overflow-hidden"
             style={{ background: 'linear-gradient(135deg, rgba(139,92,246,0.15), rgba(6,182,212,0.1))', border: '1px solid rgba(255,255,255,0.08)' }}
           >
-            <div className="absolute top-4 right-6 text-7xl text-white/5 font-serif select-none">"</div>
-            <div className="text-5xl text-violet-400 mb-4 font-serif leading-none">"</div>
+            <div className="absolute top-4 right-6 text-7xl text-white/5 font-serif select-none">&quot;</div>
+            <div className="text-5xl text-violet-400 mb-4 font-serif leading-none">&quot;</div>
             <p className="text-gray-200 text-lg italic leading-relaxed">
               Building resilient software that drives business growth — from MVP launch to enterprise scaling.
             </p>

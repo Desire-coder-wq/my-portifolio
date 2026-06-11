@@ -21,9 +21,9 @@ export default function Contact() {
     <section id="contact" className="py-24" style={{ background: '#0a0a0f' }}>
       <div className="container-custom">
         <h2 className="section-title text-white">
-          Let's <span className="gradient-text">Connect</span>
+          Let&apos;s <span className="gradient-text">Connect</span>
         </h2>
-        <p className="text-center text-gray-500 mb-16">Have a project? Reach out — I'll respond within 24 hours.</p>
+        <p className="text-center text-gray-500 mb-16">Have a project? Reach out — I&apos;ll respond within 24 hours.</p>
 
         <div className="grid lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
           {/* Info */}
@@ -115,7 +115,7 @@ export default function Contact() {
                 {status === 'loading' ? 'Sending...' : <><FaPaperPlane size={14} /> Send Message</>}
               </button>
               {status === 'success' && (
-                <p className="text-emerald-400 text-center text-sm">✓ Message sent! I'll be in touch soon.</p>
+                <p className="text-emerald-400 text-center text-sm">✓ Message sent! I&apos;ll be in touch soon.</p>
               )}
               {status === 'error' && (
                 <p className="text-red-400 text-center text-sm">✗ Failed to send. Please try email directly.</p>
