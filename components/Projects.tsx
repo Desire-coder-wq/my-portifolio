@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { FaGithub, FaExternalLinkAlt, FaPlay } from 'react-icons/fa'
 
-type MediaType = 'image' | 'video' | 'placeholder'
+type MediaType = 'image' | 'video' | 'youtube' | 'placeholder'
 
 interface Project {
   title: string
@@ -12,7 +12,7 @@ interface Project {
   github: string
   demo: string
   mediaType: MediaType
-  mediaSrc?: string       // path to image: /projects/cartwise.png, or video: /projects/rental-demo.mp4
+  mediaSrc?: string       // For images: /projects/xxx.png, For videos: Cloudinary URL, For YouTube: embed URL
   mediaPlaceholder: string
   badge?: string
 }
@@ -25,8 +25,8 @@ const projects: Project[] = [
     tech: ['React Native', 'NestJS', 'Prisma', 'PostgreSQL'],
     github: 'https://github.com/Desire-coder-wq/beyondsports',
     demo: 'https://beyondsports.fitness/',
-    mediaType: 'video',
-    mediaSrc: '/projects/beyondsports-demo.mp4',
+    mediaType: 'placeholder',  // 👈 CHANGE THIS when you have video link
+    mediaSrc: undefined,       // 👈 PASTE Cloudinary or YouTube embed URL here
     mediaPlaceholder: 'BeyondSports',
     badge: 'Mobile + Web',
   },
@@ -61,8 +61,8 @@ const projects: Project[] = [
     tech: ['Next.js', 'NestJS', 'Prisma', 'Tailwind'],
     github: 'https://github.com/Desire-coder-wq/cartwise',
     demo: '#',
-    mediaType: 'video',
-    mediaSrc: '/projects/cartwise-demo.mp4',
+    mediaType: 'youtube',  // ✅ YouTube video
+    mediaSrc: 'https://www.youtube.com/embed/7u16R0wI0Qc',  // ✅ Your Cartwise YouTube link
     mediaPlaceholder: 'CartWise',
     badge: 'Web App',
   },
@@ -73,8 +73,8 @@ const projects: Project[] = [
     tech: ['React Native', 'Node.js', 'PostgreSQL', 'Flutterwave', 'AWS'],
     github: 'https://github.com/Desire-coder-wq/rental-app',
     demo: '#',
-    mediaType: 'video',
-    mediaSrc: '/projects/rental-demo.mp4',
+    mediaType: 'placeholder',  // 👈 CHANGE THIS when you have video link
+    mediaSrc: undefined,       // 👈 PASTE Cloudinary or YouTube embed URL here
     mediaPlaceholder: 'Rental App',
     badge: 'Mobile App',
   },
@@ -85,8 +85,8 @@ const projects: Project[] = [
     tech: ['Next.js', 'NestJS', 'Prisma', 'PostgreSQL'],
     github: 'https://github.com/Desire-coder-wq/agritech',
     demo: '#',
-    mediaType: 'video',
-    mediaSrc: '/projects/agritech-demo.mp4',
+    mediaType: 'placeholder',  // 👈 CHANGE THIS when you have video link
+    mediaSrc: undefined,       // 👈 PASTE Cloudinary or YouTube embed URL here
     mediaPlaceholder: 'AgriTech',
     badge: 'Web App',
   },
@@ -97,8 +97,8 @@ const projects: Project[] = [
     tech: ['Kotlin', 'Android Studio', 'NestJS', 'WebSockets', 'Firebase'],
     github: 'https://github.com/Desire-coder-wq/college-alert',
     demo: '#',
-    mediaType: 'video',
-    mediaSrc: '/projects/college-alert-demo.mp4',
+    mediaType: 'video',  // ✅ Cloudinary video
+    mediaSrc: 'https://res.cloudinary.com/drml9utkh/video/upload/college_Alert_eurvya.mp4',  // ✅ Your College Alert Cloudinary URL
     mediaPlaceholder: 'College Alert',
     badge: 'Android App',
   },
@@ -130,6 +130,22 @@ function MediaSlot({ project }: { project: Project }) {
     project.mediaPlaceholder.toLowerCase().includes(k.toLowerCase())
   )?.[1] ?? 'from-violet-600 to-cyan-800'
 
+  // YouTube video player
+  if (project.mediaType === 'youtube' && hasSrc) {
+    return (
+      <div className="relative h-52 bg-black overflow-hidden">
+        <iframe
+          src={project.mediaSrc}
+          title={project.title}
+          className="w-full h-full"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    )
+  }
+
+  // Regular video player (Cloudinary or local)
   if (project.mediaType === 'video' && hasSrc) {
     return (
       <div className="relative h-52 bg-black overflow-hidden group">
