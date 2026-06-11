@@ -60,11 +60,11 @@ const projects: Project[] = [
       'Smart grocery buddy web app that helps people manage their shopping lists, track items as they buy, and monitor money spent. Built for everyday shoppers who want to stay on budget.',
     tech: ['Next.js', 'NestJS', 'Prisma', 'Tailwind'],
     github: 'https://github.com/Desire-coder-wq/cartwise',
-    demo: '#',
+    demo: 'https://cartwise-frontend.onrender.com/',
     mediaType: 'youtube',  // ✅ YouTube video
     mediaSrc: 'https://www.youtube.com/embed/7u16R0wI0Qc',  // ✅ Your Cartwise YouTube link
     mediaPlaceholder: 'CartWise',
-    badge: 'Web App',
+    badge: 'Live Demo',
   },
   {
     title: 'Rental Management App',

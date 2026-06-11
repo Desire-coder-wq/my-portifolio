@@ -94,7 +94,8 @@ export default function Hero() {
                   src="/hero.jpeg"
                   alt="Asingura Rose Desire"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
+                  style={{ objectPosition: 'center 30%' }}
                   priority
                 />
               </div>
@@ -102,7 +103,7 @@ export default function Hero() {
               {/* Floating badge */}
               <div className="absolute -bottom-4 -right-4 bg-[#0a0a0f] border border-white/10 rounded-2xl px-4 py-2 shadow-xl">
                 <div className="text-xs text-gray-400">Experience</div>
-                <div className="text-white font-bold text-sm">4+ Years</div>
+                <div className="text-white font-bold text-sm">2+ Years</div>
               </div>
             </div>
           </div>

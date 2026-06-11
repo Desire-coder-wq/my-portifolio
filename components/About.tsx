@@ -4,7 +4,7 @@ import { FaCode, FaAward, FaRocket, FaEnvelope, FaPhone } from 'react-icons/fa'
 
 const stats = [
   { icon: FaCode, value: '5', label: 'Projects' },
-  { icon: FaAward, value: '4+', label: 'Years Exp' },
+  { icon: FaAward, value: '2+', label: 'Years Exp' },
   { icon: FaRocket, value: '100%', label: 'Satisfaction' },
 ]
 
