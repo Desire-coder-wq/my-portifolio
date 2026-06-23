@@ -6,10 +6,10 @@ import { HiMenu, HiX } from 'react-icons/hi'
 const navLinks = [
   { href: '#home', label: 'Home' },
   { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#skills', label: 'Technical Skills' },
+  { href: '#contact', label: "Let's Connect" },
 ]
 
 export default function Navbar() {

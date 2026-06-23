@@ -25,10 +25,22 @@ const projects: Project[] = [
     tech: ['React Native', 'NestJS', 'Prisma', 'PostgreSQL'],
     github: 'https://github.com/Desire-coder-wq/beyondsports',
     demo: 'https://beyondsports.fitness/',
-    mediaType: 'placeholder',  // 👈 CHANGE THIS when you have video link
-    mediaSrc: undefined,       // 👈 PASTE Cloudinary or YouTube embed URL here
+    mediaType: 'image',
+    mediaSrc: '/projects/beyondsports.jpeg',
     mediaPlaceholder: 'BeyondSports',
     badge: 'Mobile + Web',
+  },
+  {
+    title: 'Rental Management App',
+    description:
+      'Full property management system with Flutterwave payments, automated SMS invoices, tenant tracking, and landlord dashboard. Hosted on AWS Ubuntu servers with CI/CD pipeline.',
+    tech: ['React Native', 'Node.js', 'PostgreSQL', 'Flutterwave', 'AWS'],
+    github: 'https://github.com/Desire-coder-wq/rental-app',
+    demo: '#',
+    mediaType: 'image',
+    mediaSrc: '/projects/rental-app.jpeg',
+    mediaPlaceholder: 'Rental App',
+    badge: 'Mobile App',
   },
   {
     title: 'RSK Technologies',
@@ -43,18 +55,6 @@ const projects: Project[] = [
     badge: 'Live Website',
   },
   {
-    title: 'Mayondo Wood & Furniture',
-    description:
-      'Inventory and sales management system with real-time stock tracking, analytics dashboard, and order management for a furniture business.',
-    tech: ['Vue.js', 'Node.js', 'Prisma', 'PostgreSQL'],
-    github: 'https://github.com/Desire-coder-wq/MW-F',
-    demo: '#',
-    mediaType: 'image',
-    mediaSrc: '/projects/mayondo.png',
-    mediaPlaceholder: 'Mayondo',
-    badge: 'Web App',
-  },
-  {
     title: 'CartWise',
     description:
       'Smart grocery buddy web app that helps people manage their shopping lists, track items as they buy, and monitor money spent. Built for everyday shoppers who want to stay on budget.',
@@ -67,16 +67,16 @@ const projects: Project[] = [
     badge: 'Live Demo',
   },
   {
-    title: 'Rental Management App',
+    title: 'Mayondo Wood & Furniture',
     description:
-      'Full property management system with Flutterwave payments, automated SMS invoices, tenant tracking, and landlord dashboard. Hosted on AWS Ubuntu servers with CI/CD pipeline.',
-    tech: ['React Native', 'Node.js', 'PostgreSQL', 'Flutterwave', 'AWS'],
-    github: 'https://github.com/Desire-coder-wq/rental-app',
+      'Inventory and sales management system with real-time stock tracking, analytics dashboard, and order management for a furniture business.',
+    tech: ['Vue.js', 'Node.js', 'Prisma', 'PostgreSQL'],
+    github: 'https://github.com/Desire-coder-wq/MW-F',
     demo: '#',
-    mediaType: 'placeholder',  // 👈 CHANGE THIS when you have video link
-    mediaSrc: undefined,       // 👈 PASTE Cloudinary or YouTube embed URL here
-    mediaPlaceholder: 'Rental App',
-    badge: 'Mobile App',
+    mediaType: 'image',
+    mediaSrc: '/projects/mayondo.png',
+    mediaPlaceholder: 'Mayondo',
+    badge: 'Web App',
   },
   {
     title: 'AgriTech Platform',
@@ -114,6 +114,7 @@ const badgeColors: Record<string, string> = {
 
 function MediaSlot({ project }: { project: Project }) {
   const [playing, setPlaying] = useState(false)
+  const [imageFailed, setImageFailed] = useState(false)
   const hasSrc = !!project.mediaSrc
 
   
@@ -177,7 +178,7 @@ function MediaSlot({ project }: { project: Project }) {
     )
   }
 
-  if (project.mediaType === 'image' && hasSrc) {
+  if (project.mediaType === 'image' && hasSrc && !imageFailed) {
     return (
       <div className="relative h-52 overflow-hidden group">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -185,13 +186,7 @@ function MediaSlot({ project }: { project: Project }) {
           src={project.mediaSrc!}
           alt={project.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          onError={(e) => {
-            // Fallback to gradient if image not found
-            const parent = e.currentTarget.parentElement
-            if (parent) {
-              parent.innerHTML = `<div class="w-full h-full bg-gradient-to-br ${g} flex items-center justify-center"><span class="text-white font-semibold text-lg">${project.mediaPlaceholder}</span></div>`
-            }
-          }}
+          onError={() => setImageFailed(true)}
         />
       </div>
     )
@@ -218,9 +213,9 @@ export default function Projects() {
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <div
-              key={index}
+              key={project.title}
               className="card-dark overflow-hidden hover:border-white/20 hover:-translate-y-1 transition-all duration-300 group flex flex-col"
             >
               {/* Media */}
