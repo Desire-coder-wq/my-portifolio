@@ -60,8 +60,8 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="/cv.pdf"
-              download
+              href="/Desirecv.pdf"
+              download="Desirecv.pdf"
               className="ml-4 px-4 py-2 text-sm font-semibold bg-gradient-to-r from-violet-600 to-cyan-600 text-white rounded-lg hover:opacity-90 transition"
             >
               Download CV
@@ -87,8 +87,8 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="/cv.pdf"
-              download
+              href="/Desirecv.pdf"
+              download="Desirecv.pdf"
               className="mt-2 px-4 py-3 text-center font-semibold bg-gradient-to-r from-violet-600 to-cyan-600 text-white rounded-lg"
             >
               Download CV

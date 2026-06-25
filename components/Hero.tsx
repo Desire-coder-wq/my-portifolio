@@ -33,9 +33,7 @@ export default function Hero() {
                 Full‑Stack & Mobile Developer
               </p>
               <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.05]" style={{ fontFamily: 'var(--font-syne)' }}>
-                Asingura
-                <br />
-                <span className="gradient-text">Rose Desire</span>
+                <span className="typing-name">Asingura Rose Desire</span>
               </h1>
             </div>
 
@@ -52,8 +50,8 @@ export default function Hero() {
                 Hire Me
               </a>
               <a
-                href="/cv.pdf"
-                download
+                href="/Desirecv.pdf"
+                download="Desirecv.pdf"
                 className="inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 transition-all"
               >
                 ↓ Download CV

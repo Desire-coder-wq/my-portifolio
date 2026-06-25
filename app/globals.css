@@ -43,4 +43,64 @@
   .tag {
     @apply px-3 py-1 bg-white/10 text-gray-300 text-xs font-medium rounded-full border border-white/10;
   }
+
+  .typing-name {
+    display: inline-block;
+    max-width: max-content;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.08em solid rgba(34, 211, 238, 0.9);
+    background: linear-gradient(90deg, #ffffff 0%, #a78bfa 45%, #22d3ee 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: type-name 4.8s steps(20, end) infinite, cursor-blink 0.8s step-end infinite;
+  }
+
+  .typing-project-title {
+    display: inline-block;
+    max-width: max-content;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.08em solid rgba(167, 139, 250, 0.9);
+    background: linear-gradient(90deg, #ffffff 0%, #a78bfa 48%, #22d3ee 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: type-projects 4s steps(11, end) infinite, cursor-blink 0.8s step-end infinite;
+  }
+}
+
+@keyframes type-name {
+  0%,
+  12% {
+    width: 0;
+  }
+  46%,
+  78% {
+    width: 20ch;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes type-projects {
+  0%,
+  14% {
+    width: 0;
+  }
+  48%,
+  80% {
+    width: 11ch;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes cursor-blink {
+  50% {
+    border-color: transparent;
+  }
 }
